@@ -11,11 +11,26 @@
       background-color: #0b3d0b;
       color: #e0f2e9;
       scroll-behavior: smooth;
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+
+    .left-column {
+      flex: 1;
+      padding: 40px 20px;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    .right-column {
+      flex: 2;
+      padding: 40px 20px;
+      box-sizing: border-box;
     }
 
     header {
       text-align: center;
-      padding: 40px 20px 20px;
     }
 
     img.profile {
@@ -32,25 +47,29 @@
     }
 
     .section {
-      max-width: 800px;
-      margin: 40px auto;
+      margin-bottom: 30px;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .links {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      gap: 10px;
       margin-top: 20px;
-      flex-wrap: wrap;
     }
 
     .link-box {
       background-color: #1e5631;
       padding: 15px 25px;
-      margin: 10px;
       border-radius: 10px;
       text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
@@ -66,7 +85,14 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
+      body {
+        flex-direction: column;
+      }
+      .left-column, .right-column {
+        max-width: 100%;
+        padding: 20px;
+      }
       .links {
         flex-direction: column;
         align-items: center;
@@ -75,32 +101,36 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="Trey2.JPG" alt="Trey Cotey" class="profile" />
-    <h1>Trey Cotey</h1>
-  </header>
+  <div class="left-column">
+    <header>
+      <img src="Trey2.JPG" alt="Trey Cotey" class="profile" />
+      <h1>Trey Cotey</h1>
+    </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>Hello! I'm Trey, and welcome to my personal website. I'm a rising junior at the University of Notre Dame majoring in Computer Science with a minor in Engineering Corporate Practice. I am originally from the great state of Wisconsin, where I earned Valedictorian honors at Marquette University High School. Currently, I work for WIN Technologies as a Project Management Intern.</p>
+    <div class="section">
+      <h2>About Me</h2>
+      <p>Hello! I'm Trey, and welcome to my personal website. I'm a rising junior at the University of Notre Dame majoring in Computer Science with a minor in Engineering Corporate Practice. I am originally from the great state of Wisconsin, where I earned Valedictorian honors at Marquette University High School. Currently, I work for WIN Technologies as a Project Management Intern.</p>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Campus Involvement</h2>
-    <p>On campus at Notre Dame, I wear quite a few different hats. I serve as the secretary for the men's club soccer team. I helped develop an agentic AI model to better higher education for Microsoft through Student International Business Council (SIBC). And then comes student media, which I find myself quite involved in. For Notre Dame Television, I serve as the Director of Recruiting as well as an analayst on Shamrock Sports. For the WVFI radio network, I announce men's and women's college basketball games. I also work 5+ hours a week on the student media desk helping out with various tasks.</p>
-  </div>
+  <div class="right-column">
+    <div class="section">
+      <h2>Campus Involvement</h2>
+      <p>On campus at Notre Dame, I wear quite a few different hats. I serve as the secretary for the men's club soccer team. I helped develop an agentic AI model to better higher education for Microsoft through Student International Business Council (SIBC). And then comes student media, which I find myself quite involved in. For Notre Dame Television, I serve as the Director of Recruiting as well as an analayst on Shamrock Sports. For the WVFI radio network, I announce men's and women's college basketball games. I also work 5+ hours a week on the student media desk helping out with various tasks.</p>
+    </div>
 
-  <div class="section">
-    <h2>My Resume</h2>
-    <p>View my resume at the link <a href="Trey Cotey Resume.pdf" target="_blank">here</a>.</p>
-  </div>
+    <div class="section">
+      <h2>My Resume</h2>
+      <p>View my resume at the link <a href="Trey Cotey Resume.pdf" target="_blank">here</a>.</p>
+    </div>
 
-  <div class="section">
-    <h2>Connect With Me</h2>
-    <div class="links">
-      <div class="link-box"><a href="https://www.instagram.com/treycotey/" target="_blank">Instagram</a></div>
-      <div class="link-box"><a href="https://www.linkedin.com/in/trey-cotey-580441245/" target="_blank">LinkedIn</a></div>
-      <p>Send me an email at treycotey@icloud.com </p>
+    <div class="section">
+      <h2>Connect With Me</h2>
+      <div class="links">
+        <div class="link-box"><a href="https://www.instagram.com/treycotey/" target="_blank">Instagram</a></div>
+        <div class="link-box"><a href="https://www.linkedin.com/in/trey-cotey-580441245/" target="_blank">LinkedIn</a></div>
+        <div class="link-box"><a href="mailto:treycotey@icloud.com">Email Me</a></div>
+      </div>
     </div>
   </div>
 </body>
